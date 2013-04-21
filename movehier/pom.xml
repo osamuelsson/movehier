@@ -13,7 +13,27 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-
+  
+  <build>
+  <plugins>
+  <plugin>
+       <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-jar-plugin</artifactId>
+         <configuration>
+       <archive>
+         <manifest>
+           <mainClass>se.s8n.utils.movehier.App</mainClass>
+           <packageName>se.s8n.utils.movehier</packageName>
+         </manifest>
+         <manifestEntries>
+           <mode>development</mode>
+           <url>${pom.url}</url>
+         </manifestEntries>
+       </archive>
+     </configuration>
+   </plugin>
+   </plugins>
+  </build> 
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
