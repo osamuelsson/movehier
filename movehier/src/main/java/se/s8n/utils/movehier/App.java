@@ -18,13 +18,13 @@ public class App
 {
     public static void main( String[] args ) throws IOException
     {
-    	if (args.length != 2) {
+    	if (args.length != 3) {
     		System.err.println("Usage: movehier <pattern> <source> <dest>");
     		System.exit(1);
     	}
     	final Path source = FileSystems.getDefault().getPath(args[1]);
-    	final Path dest = FileSystems.getDefault().getPath(args[1]);
-    	final PathMatcher matcher = FileSystems.getDefault().getPathMatcher(args[2]);
+    	final Path dest = FileSystems.getDefault().getPath(args[2]);
+    	final PathMatcher matcher = FileSystems.getDefault().getPathMatcher(args[0]);
     	if (!Files.exists(source)) {
     		System.err.println("Source not exist");
     		System.exit(1);
